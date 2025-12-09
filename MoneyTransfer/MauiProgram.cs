@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MoneyTransfer.ViewModels.MainVM;
 
 namespace MoneyTransfer
 {
@@ -18,6 +19,9 @@ namespace MoneyTransfer
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddTransient<MainPage>();
 
             return builder.Build();
         }
