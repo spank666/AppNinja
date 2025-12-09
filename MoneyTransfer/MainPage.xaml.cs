@@ -10,6 +10,8 @@ namespace MoneyTransfer
         {
             InitializeComponent();
             BindingContext = viewModel;
+
+            
         }
     }
 }

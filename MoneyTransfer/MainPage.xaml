@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoneyTransfer.MainPage"
-             BackgroundColor="#0e0e0e">
+             Shell.NavBarHasShadow="False"
+             Shell.NavBarIsVisible="False">
+    
 
     <ScrollView>
         <VerticalStackLayout Spacing="25"
@@ -10,18 +12,14 @@
                              VerticalOptions="Center">
 
             <!-- Logo o título ninja -->
-            <Image Source="ninja_logo.png"
+            <Image Source="dotnet_bot.png"
                    HeightRequest="120"
                    HorizontalOptions="Center"
                    Margin="0,0,0,20">
-                <Image.Shadow>
-                    <Shadow Brush="#ff0066" Offset="5,5" Radius="10" Opacity="0.8"/>
-                </Image.Shadow>
             </Image>
 
             <Label Text="AppNinja"
                    FontSize="42"
-                   TextColor="#ff0066"
                    FontFamily="Bold"
                    HorizontalOptions="Center"
                    Margin="0,0,0,40"/>
@@ -29,33 +27,17 @@
             <!-- Email -->
             <Entry Placeholder="Email o usuario"
                    Text="{Binding Email}"
-                   Keyboard="Email"
-                   TextColor="White"
-                   PlaceholderColor="#888"
-                   BackgroundColor="#1e1e1e"
-                   
-                   HeightRequest="55"/>
+                   Keyboard="Email"/>
 
             <!-- Contraseña -->
             <Entry Placeholder="Contraseña"
                    Text="{Binding Password}"
-                   IsPassword="True"
-                   TextColor="White"
-                   PlaceholderColor="#888"
-                   BackgroundColor="#1e1e1e"
-                   
-                   HeightRequest="55"/>
+                   IsPassword="True"/>
 
             <!-- Botón Login -->
             <Button Text="Iniciar Sesión"
                     Command="{Binding LoginCommand}"
-                    IsEnabled="{Binding IsNotLoggingIn}"
-                    BackgroundColor="#ff0066"
-                    TextColor="White"
-                    CornerRadius="12"
-                    HeightRequest="55"
-                    FontSize="18"
-                    FontAttributes="Bold">
+                    IsEnabled="{Binding IsNotLoggingIn}">
                 <Button.Shadow>
                     <Shadow Brush="Black" Offset="0,5" Radius="15" Opacity="0.6"/>
                 </Button.Shadow>
@@ -64,7 +46,6 @@
             <!-- Indicador de carga -->
             <ActivityIndicator IsRunning="{Binding IsLoggingIn}"
                                IsVisible="{Binding IsLoggingIn}"
-                               Color="#ff0066"
                                Margin="0,20"/>
 
             <!-- Mensaje de error -->
@@ -76,7 +57,6 @@
 
             <!-- Registro (opcional) -->
             <Label Text="¿No tienes cuenta? Regístrate"
-                   TextColor="#888"
                    HorizontalOptions="Center"
                    Margin="0,30,0,0">
                 <Label.GestureRecognizers>
