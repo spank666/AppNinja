@@ -27,8 +27,13 @@ namespace MoneyTransfer
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-            
-            #if WINDOWS
+
+            //builder.ConfigureMauiHandlers(handlers =>
+            //{
+            //    handlers.AddHandler<CustomControl.CustomEntry, CustomControl.CustomEntryHandler>();
+            //});
+
+#if WINDOWS
                         builder.ConfigureLifecycleEvents(events =>
                     {
                         events.AddWindows(windowsBuilder =>
@@ -69,7 +74,7 @@ namespace MoneyTransfer
                             });
                         });
                     });
-            #endif
+#endif
 
 #if DEBUG
             builder.Logging.AddDebug();

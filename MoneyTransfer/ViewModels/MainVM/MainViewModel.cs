@@ -23,9 +23,13 @@ namespace MoneyTransfer.ViewModels.MainVM
         [ObservableProperty]
         private bool hasError;
 
+        [ObservableProperty]
+        private bool isEmailValid = false;
+
         [RelayCommand]
         private async Task LoginAsync()
         {
+            isEmailValid = false;
             HasError = false;
             ErrorMessage = string.Empty;
             IsLoggingIn = true;
@@ -38,7 +42,7 @@ namespace MoneyTransfer.ViewModels.MainVM
                 if (Email.Contains("ninja") && Password.Length >= 6)
                 {
                     // ÉXITO → vamos a la página principal (TaskPage por ejemplo)
-                    await Shell.Current.GoToAsync("//tasks");
+                    //await Shell.Current.GoToAsync("//tasks");
                 }
                 else
                 {

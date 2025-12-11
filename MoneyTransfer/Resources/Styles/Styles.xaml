@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+    >
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
@@ -434,5 +436,31 @@
     <Style TargetType="ContentPage">
         <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
     </Style>
+    <!--
+    <Style TargetType="Entry" >
+        
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackground}" />
+        <Setter Property="TextColor" Value="{DynamicResource OnSurface}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource Placeholder}" />
+        <Setter Property="HeightRequest" Value="55" />
+
+        
+        <Setter Property="Triggers">
+            <Setter.Value>
+                <Trigger TargetType="Entry" Property="behaviors:Validation.IsValid" Value="False">
+                    <Setter Property="BackgroundColor" Value="#20FF4444" />
+                    
+                    <Setter Property="Effects">
+                        <Setter.Value>
+                            <EffectCollection>
+                                <effects:RedBorderEffect />
+                            </EffectCollection>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    -->
 
 </ResourceDictionary>

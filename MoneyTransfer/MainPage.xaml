@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoneyTransfer.MainPage"
+             xmlns:local="clr-namespace:MoneyTransfer.CustomControl"
              Shell.NavBarHasShadow="False"
              Shell.NavBarIsVisible="False">
     
@@ -64,7 +65,15 @@
                 </Label.GestureRecognizers>
             </Label>
 
+            <local:CustomEntry 
+    Placeholder="Email o usuario"
+    Text="{Binding Email}"
+    IsValid="{Binding IsEmailValid}"
+     />
+            
+
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>
